@@ -25,7 +25,7 @@ package name!
 ```javascript
 import alert from 'alert'
 
-alert('howdy')
+alert('howdy', 'title')
 ```
 
 If using the API, you can specify a program to use. This can be one of:
@@ -47,7 +47,7 @@ and will blow up if you get it wrong. It's advised to just use the default behav
 
 ```javascript
 import alert from 'alert'
-alert('hey!', 'yad')
+alert('hey!', 'title', 'yad')
 ```
 
 `alert` also has a cli. `npm i -g alert` and run `alert 'sup brah'`.

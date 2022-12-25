@@ -18,7 +18,7 @@ const unixPrograms = [
 
 const bestUnixProgram = unixPrograms.filter(isProgramInstalled)[0] || 'console'
 
-const cscript = (s) => ['cscript', windowsScript, s]
+const cscript = (s, t) => ['cscript', windowsScript, s, t]
 const msg = (str) => ['msg', '"%username%"', str]
 const zenity = (s) => ['zenity', '--info', '--text', s]
 const yad = (s) => ['yad', '--text', s, '--button', 'OK']
@@ -58,8 +58,8 @@ const nameMap = {
   zenity
 }
 
-const getAlert = (input = '', thingToUse = '') => {
-  const execInput = (cmd) => execCmd(cmd(input))
+const getAlert = (input = '', title = '', thingToUse = '') => {
+  const execInput = (cmd) => execCmd(cmd(input, title))
 
   const pickFromNameMap = (option = bestUnixProgram) => {
     if (option !== 'console') {
